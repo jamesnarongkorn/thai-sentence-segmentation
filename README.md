@@ -12,11 +12,10 @@
 - Our mT5-small model achieves a sentence-level F1 score of 31.9% on inputs with an English short prompt. Results also suggest that the language and phrasing used in prompts have an effect on the performance of the model.
 
 ## Our Methodology 
-Explain your model here how it works. 
 
-- Input is ... 
-- Output is ...
-- Model description 
+- As with T5, mT5 is an encoder-decoder model which takes text sequences as  input and convert them to target text sequences, which means that it can perform any sequence-to-sequence tasks such as summarization, question answering, translation, text generation, and even sentence segmentation. The model is pretrained on the mC4 dataset, covering a miltitude of languages including Thai. mT5 requires that a 'prompt' or prefix is added to the start of an input sequence to specify a task that the model needs to perform.
+- Here, we attempt to implemented 2 variants of mT5: mT5-Small (with 300 million parameters) and mT5-Base (with 580 million parameters). We also opt for simpleT5⚡️[^7] as a quick and simple method to fine-tune the models.
+- simpleT5⚡️ only accepts a pandas dataframe with 2 columns labeled 'source_text' and 'target_text' for both the training set and the evaluation set. No further steps are needed for data preparation.
 
 ## Dataset 
 - Annotation guidelines 
@@ -59,3 +58,5 @@ How did it go?  + Interpret results.
 [^5]: Chanatip Saetia, Ekapol Chuangsuwanich, Tawunrat Chalothorn, and Peerapon Vateekul, "Semi-supervised Thai Sentence Segmentation Using Local and Distant Word Representations," *Engineering Journal* 25, no. 6 (2021), https://doi.org/10.4186/ej.2021.25.6.15.
 
 [^6]: Sumeth Yuenyong and Virach Sornlertlamvanich, "TranSentCut - Transformer Based Thai Sentence Segmentation," *Songklanakarin Journal of Science and Technology (SJST)* 44, no. 3 (2022): 852-860, https://doi.org/10.14456/sjst-psu.2022.114.
+
+[^7] https://github.com/Shivanandroy/simpleT5
