@@ -5,19 +5,11 @@
 
 - Punctuation in Thai hardly serves any functions in indicating the end of a sentence in a text: punctuation marks are used with abrreviated nouns, while question and exclamation marks are rarely used in formal domains[^1]. However, Thai orthography does make use of spaces to signal the end of a clause or a sentence, but it is largely subjective and varies from context to context, which is not a reliable method.
 
-- Several methods have been proposed to tackle this issue. An alternative linguistic analysis is offered by Wirote Aroonmanakun (2007) who argues that clauses should serve as basic syntactic units instead of sentences.[^2] Different model architectures, such as CRF[^3] and BiLSTM-CNN[^4], are utilized in combination with n-gram and POS features. Recently, researchers have been able to achieve the state-of-the-art result for Thai sentence segmentation on the Orchid and UGWC datasets using advanced language model such as ELMo[^5] and WangchanBERTa[^6].
+- Several methods have been proposed to tackle this issue. An alternative linguistic analysis is offered by Wirote Aroonmanakun (2007) who argues that clauses should serve as basic syntactic units instead of sentences.[^2] Different model architectures, such as CRF[^3] and BiLSTM-CNN[^4], are utilized in combination with n-gram and POS features for Thai sentence segmentation. Recently, researchers have been able to achieve the state-of-the-art result on the Orchid and UGWC datasets using advanced language model such as ELMo[^5] and WangchanBERTa[^6].
 
-These methods require the data to be tokenized 
-using features such as n-gram and POS
-    
-    The are some workarounds, like 
+- So far, little attention has been paid to the implementation of sequence-to-sequence model. This project therefore aims to experiment on the segmentation task using Google's mT5, a multilingual varaint of the T5 model, with the newly released LST20 Corpus, in which 74,180 sentences are annotated.
 
-
-
-- What other people have done? What model have previous work have used? What did they miss?  (1-2 paragraphs)
-- Summarize your idea
-    In this project, I attempt to experiment on the issue using Google's mT5, a multilingual varaint of the T5 model.
-- Summarize your results
+- 
 
 ## Our Approach/Methodology/Model 
 Explain your model here how it works. 
