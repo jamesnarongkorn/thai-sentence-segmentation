@@ -48,14 +48,14 @@ How did it go?  + Interpret results.
 - Summary of results.
 
 
-[^1]: Suthisa Rojana-Anun, "Punctuation in Thai: prescribed usages and current practice," *Journal of the Association of Frence Teacher in Thailand* 137, no. 42 (2019): 11-12, https://doi.org/10.14456/bulletin-atpf.2019.1
+[^1]: Suthisa Rojana-Anun, "Punctuation in Thai: prescribed usages and current practice," *Journal of the Association of Frence Teacher in Thailand* 137, no. 42 (2019): 11-12, https://doi.org/10.14456/bulletin-atpf.2019.1.
 
-[^2]: Wirote Aroonmanakun, "Thoughts on word and sentence segmentation in Thai," *Proceedings of the Seventh Symposium on Natural language Processing, Pattaya, Thailand, December 13–15*, (2007): 85-90.
+[^2]: Wirote Aroonmanakun, "Thoughts on Word and Sentence Segmentation in Thai," *Proceedings of the Seventh Symposium on Natural language Processing, Pattaya, Thailand, December 13–15*, (2007): 85-90.
 
-[^3]: Rungsiman Nararatwong, Natthawut Kertkeidkachorn, Nagul Cooharojananone, and Hitoshi Okada, "Improving Thai Word and Sentence Segmentation Using Linguistic Knowledge," *IEICE TRANSACTIONS on Information and Systems* 101, no. 12 (2018): 3218-3225.
+[^3]: Rungsiman Nararatwong, Natthawut Kertkeidkachorn, Nagul Cooharojananone, and Hitoshi Okada, "Improving Thai Word and Sentence Segmentation Using Linguistic Knowledge," *IEICE TRANSACTIONS on Information and Systems* 101, no. 12 (2018): 3218-3225, https://doi.org/10.1587/transinf.2018EDP7016.
 
-[^4]: Sorratat Sirirattanajakarin, Duangjai Jitkongchuen, and Peerasak Intarapaiboon, "BoydCut: Bidirectional LSTM-CNN Model for Thai Sentence Segmenter," *2020 1st International Conference on Big Data Analytics and Practices (IBDAP)*, 2020.
+[^4]: Sorratat Sirirattanajakarin, Duangjai Jitkongchuen, and Peerasak Intarapaiboon, "BoydCut: Bidirectional LSTM-CNN Model for Thai Sentence Segmenter," *2020 1st International Conference on Big Data Analytics and Practices (IBDAP)*, (2020): 1-4, https://doi.org/10.1109/IBDAP50342.2020.9245454.
 
-[^5]: Chanatip Saetia, Ekapol Chuangsuwanich, Tawunrat Chalothorn, and Peerapon Vateekul, "Semi-supervised Thai Sentence Segmentation Using Local and Distant Word Representations," *Engineering Journal* 25, no. 6 (2021), https://doi.org/10.4186/ej.2021.25.6.15
+[^5]: Chanatip Saetia, Ekapol Chuangsuwanich, Tawunrat Chalothorn, and Peerapon Vateekul, "Semi-supervised Thai Sentence Segmentation Using Local and Distant Word Representations," *Engineering Journal* 25, no. 6 (2021), https://doi.org/10.4186/ej.2021.25.6.15.
 
-[^6]: Sumeth Yuenyong and Virach Sornlertlamvanich, "TranSentCut - Transformer Based Thai Sentence Segmentation," *Songklanakarin Journal of Science and Technology (SJST)* 44, no. 3 (2022): 852-860, https://doi.org/10.14456/sjst-psu.2022.114
+[^6]: Sumeth Yuenyong and Virach Sornlertlamvanich, "TranSentCut - Transformer Based Thai Sentence Segmentation," *Songklanakarin Journal of Science and Technology (SJST)* 44, no. 3 (2022): 852-860, https://doi.org/10.14456/sjst-psu.2022.114.
