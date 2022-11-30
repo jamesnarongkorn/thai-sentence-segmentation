@@ -7,27 +7,27 @@
 
 - Several methods have been proposed to tackle this issue. An alternative linguistic analysis is offered by Wirote Aroonmanakun (2007) who argues that clauses should serve as basic syntactic units instead of sentences.[^2] Different model architectures, such as CRF[^3] and BiLSTM-CNN[^4], are utilized in combination with n-gram and POS features for Thai sentence segmentation. Recently, researchers have been able to achieve the state-of-the-art result on the Orchid and UGWC datasets using advanced language model such as ELMo[^5] and WangchanBERTa[^6].
 
-- So far, little attention has been paid to the implementation of sequence-to-sequence model. This project therefore aims to experiment on the segmentation task using Google's mT5, a multilingual varaint of the T5 model, with the newly released LST20 Corpus, in which 74,180 sentences are annotated.
+- So far, little attention has been paid to the implementation of a sequence-to-sequence model. This project therefore aims to experiment on the segmentation task using Google's mT5, a multilingual varaint of the T5 model, with the newly released LST20 Corpus.
 
 - Our mT5-small model achieves a sentence-level F1 score of 31.9% on inputs with an English short prompt. Results also suggest that the language and phrasing used in prompts have an effect on the performance of the model.
 
 ## Our Methodology 
 
-- As with T5, mT5 is an encoder-decoder model which takes text sequences as  input and convert them to target text sequences, which means that it can perform any sequence-to-sequence tasks such as summarization, question answering, translation, text generation, and even sentence segmentation. The model is pretrained on the mC4 dataset, covering a miltitude of languages including Thai. mT5 requires that a 'prompt' or prefix is added to the start of an input sequence to specify a task that the model needs to perform.
+- As with T5, mT5 is an encoder-decoder model which takes text sequences as  input and convert them to target text sequences, which means that it can perform any sequence-to-sequence tasks such as summarization, question answering, translation, text generation, and even sentence segmentation. The model is pretrained on the mC4 dataset, covering a miltitude of languages including Thai. 
+- mT5 requires that a 'prompt' or prefix is added to the start of an input sequence to specify a task that the model needs to perform.
 - Here, we attempt to implemented 2 variants of mT5: mT5-Small (with 300 million parameters) and mT5-Base (with 580 million parameters). We also opt for simpleT5⚡️ [^7] as a quick and simple method to fine-tune the models.
 - simpleT5⚡️ only accepts a pandas dataframe with 2 columns labeled 'source_text' and 'target_text' for both the training set and the evaluation set. No further steps are needed for data preparation.
 
-## Dataset 
+## Dataset
+- *To be added*
 - Annotation guidelines 
 - Results total how many tokens, sentences, etc. 
 - Label distribution
 
-| Label | Frequency |
-|--------|----------|
-| good | 60% |
-| bad | 40 % | 
+in which 74,180 sentences are annotated
 
 ## Experiment setup
+- *To be added*
 - Which pre-trained model? How did you pretrain embeddings? 
 - Computer. How long? 
 - Hyperparameter tuning? Dropout? How many epochs? 
@@ -43,6 +43,7 @@ How did it go?  + Interpret results.
 
 
 ## Conclusion
+- *To be added*
 - What task? What did we do? 
 - Summary of results.
 
@@ -60,3 +61,5 @@ How did it go?  + Interpret results.
 [^6]: Sumeth Yuenyong and Virach Sornlertlamvanich, "TranSentCut - Transformer Based Thai Sentence Segmentation," *Songklanakarin Journal of Science and Technology (SJST)* 44, no. 3 (2022): 852-860, https://doi.org/10.14456/sjst-psu.2022.114.
 
 [^7]: https://github.com/Shivanandroy/simpleT5
+
+[^8]: Prachya Boonkwan et al., "The Annotation Guideline of LST20 Corpus," (2020), https://doi.org/10.48550/arXiv.2008.05055.
