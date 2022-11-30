@@ -9,7 +9,7 @@
 
 - So far, little attention has been paid to the implementation of sequence-to-sequence model. This project therefore aims to experiment on the segmentation task using Google's mT5, a multilingual varaint of the T5 model, with the newly released LST20 Corpus, in which 74,180 sentences are annotated.
 
-- 
+- Our mT5-small model achieves a sentence-level F1 score of 31.9% on inputs with an English short prompt. Results also suggest that the language and phrasing used in prompts have an effect on the performance of the model.
 
 ## Our Approach/Methodology/Model 
 Explain your model here how it works. 
@@ -39,7 +39,7 @@ How did it go?  + Interpret results.
 ### Model comparison
 | Model     | Th Short Prompt 1 | Th Long Prompt 2 | En Short Prompt 1 | En Long Prompt 2 |
 |-----------|-------------------|------------------|-------------------|------------------|
-| mT5-Small | 0.20              | 0.20             | **0.31**              | 0.17             |
+| mT5-Small | 20.5              | 20.7             | **31.9**              | 17.9             |
 | mT5-Base  | **                | **               | **                | **               |
 
 
