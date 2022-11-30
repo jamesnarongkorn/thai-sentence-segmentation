@@ -14,7 +14,7 @@
 ## Our Methodology 
 
 - As with T5, mT5 is an encoder-decoder model which takes text sequences as  input and convert them to target text sequences, which means that it can perform any sequence-to-sequence tasks such as summarization, question answering, translation, text generation, and even sentence segmentation. The model is pretrained on the mC4 dataset, covering a miltitude of languages including Thai. mT5 requires that a 'prompt' or prefix is added to the start of an input sequence to specify a task that the model needs to perform.
-- Here, we attempt to implemented 2 variants of mT5: mT5-Small (with 300 million parameters) and mT5-Base (with 580 million parameters). We also opt for simpleT5⚡️[^7] as a quick and simple method to fine-tune the models.
+- Here, we attempt to implemented 2 variants of mT5: mT5-Small (with 300 million parameters) and mT5-Base (with 580 million parameters). We also opt for simpleT5⚡️ [^7] as a quick and simple method to fine-tune the models.
 - simpleT5⚡️ only accepts a pandas dataframe with 2 columns labeled 'source_text' and 'target_text' for both the training set and the evaluation set. No further steps are needed for data preparation.
 
 ## Dataset 
