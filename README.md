@@ -5,7 +5,12 @@
 
 - Punctuation in Thai hardly serves any functions in indicating the end of a sentence in a text: punctuation marks are used with abrreviated nouns, while question and exclamation marks are rarely used in formal domains[^1]. However, Thai orthography does make use of spaces to signal the end of a clause or a sentence, but it is largely subjective and varies from context to context, which is not a reliable method.
 
-- Several methods have been proposed to tackle this issue. An alternative linguistic analysis is offered by Wirote Aroonmanakun (2007) who argues that clauses should serve as basic syntactic units instead of sentences.[^2] 
+- Several methods have been proposed to tackle this issue. An alternative linguistic analysis is offered by Wirote Aroonmanakun (2007) who argues that clauses should serve as basic syntactic units instead of sentences.[^2] Different model architectures, such as CRF[^3] and BiLSTM-CNN[^4], are utilized in combination with n-gram and POS features.
+
+Recently, advanced language model, such as ELMo and WangchanBERTa  have been utilized 
+
+These methods require the data to be tokenized 
+using features such as n-gram and POS
     
     The are some workarounds, like 
 
@@ -53,15 +58,14 @@ How did it go?  + Interpret results.
 - Summary of results.
 
 
-[^1]: Suthisa Rojana-Anun, "Punctuation in Thai: prescribed usages and current practice," *Journal of the Association of Frence Teacher in Thailand* 137, no. 42 (2019): 11-12. https://doi.org/10.14456/bulletin-atpf.2019.1
+[^1]: Suthisa Rojana-Anun, "Punctuation in Thai: prescribed usages and current practice," *Journal of the Association of Frence Teacher in Thailand* 137, no. 42 (2019): 11-12, https://doi.org/10.14456/bulletin-atpf.2019.1
 
+[^2]: Wirote Aroonmanakun, "Thoughts on word and sentence segmentation in Thai," *Proceedings of the Seventh Symposium on Natural language Processing, Pattaya, Thailand, December 13–15*, (2007): 85-90.
 
-[^2]: Wirote Aroonmanakun (2007)
+[^3]: Rungsiman Nararatwong, Natthawut Kertkeidkachorn, Nagul Cooharojananone, and Hitoshi Okada, "Improving Thai Word and Sentence Segmentation Using Linguistic Knowledge," *IEICE TRANSACTIONS on Information and Systems* 101, no. 12 (2018): 3218-3225.
 
-[^3]: Alberto Poncelas et al., “Multiple Segmentations of Thai Sentences for Neural Machine Translation.” *Proceedings of the 1st Joint SLTU and CCURL Workshop (SLTU-CCURL)*, (2020). https://doi.org/10.48550/ARXIV.2004.11472.
+[^4]: Sorratat Sirirattanajakarin, Duangjai Jitkongchuen, and Peerasak Intarapaiboon, "BoydCut: Bidirectional LSTM-CNN Model for Thai Sentence Segmenter," *2020 1st International Conference on Big Data Analytics and Practices (IBDAP)*, 2020.
 
+[^5]:
 
-we explore how to augment a set of English–Thai parallel data by replicating sentence-pairs with different word segmentation methods on Thai, as training data for NMT model training. Using different merge operations of Byte Pair Encoding, different segmentations of Thai sentences can be obtained. The experiments show that combining these datasets, performance is improved for NMT models trained with a dataset that has been split using a supervised splitting tool.
-
-
-a discourse should be seen as a combination of clauses rather than sentences. Some discourse clues then can be used to segment these discourse units. The result from sentence segmentation module could be a sequence of segments composed of clauses, which then can be constructed into the discourse structure
+[^6]:
