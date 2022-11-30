@@ -24,7 +24,7 @@
 - Results total how many tokens, sentences, etc. 
 - Label distribution
 
-in which 74,180 sentences are annotated
+[^8] in which 74,180 sentences are annotated
 
 ## Experiment setup
 - *To be added*
