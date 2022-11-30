@@ -59,4 +59,4 @@ How did it go?  + Interpret results.
 
 [^6]: Sumeth Yuenyong and Virach Sornlertlamvanich, "TranSentCut - Transformer Based Thai Sentence Segmentation," *Songklanakarin Journal of Science and Technology (SJST)* 44, no. 3 (2022): 852-860, https://doi.org/10.14456/sjst-psu.2022.114.
 
-[^7] https://github.com/Shivanandroy/simpleT5
+[^7]: https://github.com/Shivanandroy/simpleT5
