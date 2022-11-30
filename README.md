@@ -56,9 +56,9 @@ How did it go?  + Interpret results.
 [^1]: Suthisa Rojana-Anun, "Punctuation in Thai: prescribed usages and current practice," *Journal of the Association of Frence Teacher in Thailand* 137, no. 42 (2019): 11-12. https://doi.org/10.14456/bulletin-atpf.2019.1
 
 
-[^2] Wirote Aroonmanakun (2007)
+[^2]: Wirote Aroonmanakun (2007)
 
-[^3] Alberto Poncelas et al., “Multiple Segmentations of Thai Sentences for Neural Machine Translation.” *Proceedings of the 1st Joint SLTU and CCURL Workshop (SLTU-CCURL)*, (2020). https://doi.org/10.48550/ARXIV.2004.11472.
+[^3]: Alberto Poncelas et al., “Multiple Segmentations of Thai Sentences for Neural Machine Translation.” *Proceedings of the 1st Joint SLTU and CCURL Workshop (SLTU-CCURL)*, (2020). https://doi.org/10.48550/ARXIV.2004.11472.
 
 
 we explore how to augment a set of English–Thai parallel data by replicating sentence-pairs with different word segmentation methods on Thai, as training data for NMT model training. Using different merge operations of Byte Pair Encoding, different segmentations of Thai sentences can be obtained. The experiments show that combining these datasets, performance is improved for NMT models trained with a dataset that has been split using a supervised splitting tool.
