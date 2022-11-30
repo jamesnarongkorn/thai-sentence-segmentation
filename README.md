@@ -11,7 +11,7 @@
 
 - Our mT5-small model achieves a sentence-level F1 score of 31.9% on inputs with an English short prompt. Results also suggest that the language and phrasing used in prompts have an effect on the performance of the model.
 
-## Our Approach/Methodology/Model 
+## Our Methodology 
 Explain your model here how it works. 
 
 - Input is ... 
@@ -40,7 +40,7 @@ How did it go?  + Interpret results.
 | Model     | Th Short Prompt 1 | Th Long Prompt 2 | En Short Prompt 1 | En Long Prompt 2 |
 |-----------|-------------------|------------------|-------------------|------------------|
 | mT5-Small | 20.5              | 20.7             | **31.9**              | 17.9             |
-| mT5-Base  | **                | **               | **                | **               |
+| mT5-Base  | *to be added* | *to be added* | *to be added* | *to be added* |
 
 
 ## Conclusion
