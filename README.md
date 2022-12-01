@@ -40,7 +40,7 @@
 
 ## Results 
 - As can be seen from the data in the table below, no significant differences are found among Thai prompts, as noted that mT5 does not benefit from a task prefix during single-task fine-tuning[^9].
-- However, the most striking result to emerge from the data is that different propmts do affect model performance. The short English propmt produces the best result with 31.9% of sentence-level F1 score, while the long English prompt however yields the lowest score. This may result from the fact that longer prompts take up more space during tokenization, cauing the input to be truncated.
+- However, the most striking result to emerge from the data is that different propmts do affect model performance. The short English propmt produces the best result with 31.9% of sentence-level F1 score, while the long English prompt yields the lowest score. This may result from the fact that longer prompts take up more space during tokenization, cauing the input to be truncated.
 - *mT5-Base ...... to be added*
 
 ### Model comparison
