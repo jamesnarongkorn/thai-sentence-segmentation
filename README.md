@@ -5,26 +5,25 @@
 
 - Punctuation in Thai hardly serves any functions in indicating the end of a sentence in a text: punctuation marks are used with abrreviated nouns, while question and exclamation marks are rarely used in formal domains[^1]. However, Thai orthography does make use of spaces to signal the end of a clause or a sentence, but it is largely subjective and varies from context to context, which is not a reliable method.
 
-- Several methods have been proposed to tackle this issue. An alternative linguistic analysis is offered by Wirote Aroonmanakun (2007) who argues that clauses should serve as basic syntactic units instead of sentences.[^2] Different model architectures, such as CRF[^3] and BiLSTM-CNN[^4], are utilized in combination with n-gram and POS features for Thai sentence segmentation. Recently, researchers have been able to achieve the state-of-the-art result on the Orchid and UGWC datasets using advanced language model such as ELMo[^5] and WangchanBERTa[^6].
+- Several methods have been proposed to tackle this issue. An alternative linguistic analysis is offered by Wirote Aroonmanakun (2007) who argues that clauses should serve as basic syntactic units instead of sentences.[^2] Different model architectures, such as CRF[^3] and BiLSTM-CNN[^4], are utilized in combination with n-gram and POS features for Thai sentence segmentation. Recently, researchers have been able to achieve remarkable results using WangchanBERTa[^5] and attain the state-of-the-art result on the Orchid and UGWC datasets with ELMo[^6].
 
-- So far, little attention has been paid to the implementation of a sequence-to-sequence model. This project therefore aims to experiment on the segmentation task using Google's mT5, a multilingual varaint of the T5 model, with the newly released LST20 Corpus.
+- So far, little attention has been paid to the implementation of sequence-to-sequence models. This project therefore aims to experiment on the segmentation task using Google's mT5, a multilingual varaint of the T5 model, with the newly released LST20 Corpus.
 
-- Our mT5-small model achieves a sentence-level F1 score of 31.9% on inputs with an English short prompt. Results also suggest that the language and phrasing used in prompts have an effect on the performance of the model.
+- Our mT5-small model achieves a sentence-level F1 score of 31.9% on inputs with a short English prompt. Results also suggest that the language and phrasing used in prompts have an effect on the performance of the model.
 
 ## Our Methodology 
 
 - As with T5, mT5 is an encoder-decoder model which takes text sequences as  input and convert them to target text sequences, which means that it can perform any sequence-to-sequence tasks such as summarization, question answering, translation, text generation, and even sentence segmentation. The model is pretrained on the mC4 dataset, covering a miltitude of languages including Thai. 
 - mT5 requires that a 'prompt' or prefix is added to the start of an input sequence to specify a task that the model needs to perform.
 - Here, we attempt to implemented 2 variants of mT5: mT5-Small (with 300 million parameters) and mT5-Base (with 580 million parameters). We also opt for simpleT5⚡️ [^7] as a quick and simple method to fine-tune the models.
-- simpleT5⚡️ only accepts a pandas dataframe with 2 columns labeled 'source_text' and 'target_text' for both the training set and the evaluation set. No further steps are needed for data preparation.
+- We provide the training set and the evaluation set to simpleT5⚡️ with a pandas dataframe with 2 columns labeled 'source_text' for the input and 'target_text' for the output. The input is sequences of text prefixed by a prompt and the output is sequences of text with vertical bars (|) as sentence delimiters.
 
 ## Dataset
-- *To be added*
-- Annotation guidelines 
-- Results total how many tokens, sentences, etc. 
-- Label distribution
+- The models are trained on the LST20 Corpus, which offers 74,180 Thai sentences annotated with a boundary marker.[^8] This large-scale NECTEC-developed dataset also comes with four other layers of linguistic annotation: word segmentation, POS tagging, named entities, and clause boundaries. It spans over 3,000,000 words from 3,745 documents in 15 news domain.
 
-[^8] in which 74,180 sentences are annotated
+|           | train  | eval  | test  | all    |
+|-----------|--------|-------|-------|--------|
+| sentences | 63,310 | 5,620 | 5,250 | 74,180 |
 
 ## Experiment setup
 - *To be added*
@@ -56,9 +55,9 @@ How did it go?  + Interpret results.
 
 [^4]: Sorratat Sirirattanajakarin, Duangjai Jitkongchuen, and Peerasak Intarapaiboon, "BoydCut: Bidirectional LSTM-CNN Model for Thai Sentence Segmenter," *2020 1st International Conference on Big Data Analytics and Practices (IBDAP)*, (2020): 1-4, https://doi.org/10.1109/IBDAP50342.2020.9245454.
 
-[^5]: Chanatip Saetia, Ekapol Chuangsuwanich, Tawunrat Chalothorn, and Peerapon Vateekul, "Semi-supervised Thai Sentence Segmentation Using Local and Distant Word Representations," *Engineering Journal* 25, no. 6 (2021), https://doi.org/10.4186/ej.2021.25.6.15.
+[^5]: Sumeth Yuenyong and Virach Sornlertlamvanich, "TranSentCut - Transformer Based Thai Sentence Segmentation," *Songklanakarin Journal of Science and Technology (SJST)* 44, no. 3 (2022): 852-860, https://doi.org/10.14456/sjst-psu.2022.114.
 
-[^6]: Sumeth Yuenyong and Virach Sornlertlamvanich, "TranSentCut - Transformer Based Thai Sentence Segmentation," *Songklanakarin Journal of Science and Technology (SJST)* 44, no. 3 (2022): 852-860, https://doi.org/10.14456/sjst-psu.2022.114.
+[^6]: Chanatip Saetia, Ekapol Chuangsuwanich, Tawunrat Chalothorn, and Peerapon Vateekul, "Semi-supervised Thai Sentence Segmentation Using Local and Distant Word Representations," *Engineering Journal* 25, no. 6 (2021), https://doi.org/10.4186/ej.2021.25.6.15.
 
 [^7]: https://github.com/Shivanandroy/simpleT5
 
