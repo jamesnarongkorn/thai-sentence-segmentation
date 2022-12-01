@@ -1,7 +1,7 @@
 # Thai Sentence Segmentation with mT5
 
 ## Introduction
--  Many writing systems indicate the end of a sentence with a punctuation mark. English, as well as many other European languages, ends its sentences with either a punctuation mark (.), a question mark (?), or an exclamation mark (!). In contrast, a number of languages lack a clear system to mark sentence boundaries, making sentence segmentation in NLP a challenging task. One of such languages is Thai.
+- Many writing systems indicate the end of a sentence with a punctuation mark. English, as well as many other European languages, ends its sentences with either a punctuation mark (.), a question mark (?), or an exclamation mark (!). In contrast, a number of languages lack a clear system to mark sentence boundaries, making sentence segmentation in NLP a challenging task. One of such languages is Thai.
 
 - Punctuation in Thai hardly serves any functions in indicating the end of a sentence in a text: punctuation marks are used with abrreviated nouns, while question and exclamation marks are rarely used in formal domains[^1]. However, Thai orthography does make use of spaces to signal the end of a clause or a sentence, but it is largely subjective and varies from context to context, which is not a reliable method.
 
@@ -13,29 +13,38 @@
 
 ## Our Methodology 
 
-- As with T5, mT5 is an encoder-decoder model which takes text sequences as  input and convert them to target text sequences, which means that it can perform any sequence-to-sequence tasks such as summarization, question answering, translation, text generation, and even sentence segmentation. The model is pretrained on the mC4 dataset, covering a miltitude of languages including Thai. 
+- As with T5, mT5 is an encoder-decoder model which takes text sequences as input and convert them to target text sequences, which means that it can perform any sequence-to-sequence tasks such as summarization, question answering, translation, text generation, and even sentence segmentation. The model is pretrained on the mC4 dataset, covering a miltitude of languages including Thai. 
 - mT5 requires that a 'prompt' or prefix is added to the start of an input sequence to specify a task that the model needs to perform.
 - Here, we attempt to implemented 2 variants of mT5: mT5-Small (with 300 million parameters) and mT5-Base (with 580 million parameters). We also opt for simpleT5⚡️ [^7] as a quick and simple method to fine-tune the models.
-- We provide the training set and the evaluation set to simpleT5⚡️ with a pandas dataframe with 2 columns labeled 'source_text' for the input and 'target_text' for the output. The input is sequences of text prefixed by a prompt and the output is sequences of text with vertical bars (|) as sentence delimiters.
+- We provide the training set and the evaluation set to simpleT5⚡️ with a pandas dataframe with 2 columns labeled 'source_text' for the input and 'target_text' for the output. The input is sequences of text prefixed by a prompt and the output is sequences of text marked with vertical bars (|) as sentence delimiters.
 
 ## Dataset
-- The models are trained on the LST20 Corpus, which offers 74,180 Thai sentences annotated with a boundary marker.[^8] This large-scale NECTEC-developed dataset also comes with four other layers of linguistic annotation: word segmentation, POS tagging, named entities, and clause boundaries. It spans over 3,000,000 words from 3,745 documents in 15 news domain.
+- The models are finetuned on the LST20 Corpus, which offers 74,180 Thai sentences annotated with a boundary marker[^8]. This large-scale NECTEC-developed dataset also comes with four other layers of linguistic annotation: word segmentation, POS tagging, named entities, and clause boundaries. It spans over 3,000,000 words from 3,745 documents in 15 news domain.
 
 |           | train  | eval  | test  | all    |
 |-----------|--------|-------|-------|--------|
 | sentences | 63,310 | 5,620 | 5,250 | 74,180 |
 
 ## Experiment setup
-- *To be added*
-- Which pre-trained model? How did you pretrain embeddings? 
-- Computer. How long? 
-- Hyperparameter tuning? Dropout? How many epochs? 
+- To reiterate, training texts from the LST20 Corpus is feed to the mT5 model. Task prefix is included at the beginning of each row of data with 4 variations to test whether differences in prompt length and language affect model performance. The propmts are listed below:
+    - "ตัดประโยค: "
+    - "ตัดประโยคด้วยเครื่องหมาย |: "
+    - "segment sentence: "
+    - "segment each sentence with |: "
+- Each prompt takes approximately 25 minutes to train on the mT5-Small with GPU on a Google Colab free account. 
+- Regarding hyperparameter tuning, simpleT5⚡️ handles most of the tasks and lets us specify these training arguments:
+    - source_max_token_len: the max token length of source text is set to 150.
+    - target_max_token_len: the max token length of target text is set to 150.
+    - batch_size: batch size is set to 8.
+    - max_epochs: the number of epochs is set to 3.
 
 ## Results 
-How did it go?  + Interpret results. 
+- As can be seen from the data in the table below, no significant differences are found among Thai prompts, as noted that mT5 does not benefit from a task prefix during single-task fine-tuning[^9].
+- However, the most striking result to emerge from the data is that different propmts do affect model performance. The short English propmt produces the best result with 31.9% of sentence-level F1 score, while the long English prompt however yields the lowest score. This may result from the fact that longer prompts take up more space during tokenization, cauing the input to be truncated.
+- *mT5-Base ...... to be added*
 
 ### Model comparison
-| Model     | Th Short Prompt 1 | Th Long Prompt 2 | En Short Prompt 1 | En Long Prompt 2 |
+| Model     | Short Th Prompt | Long Th Prompt | Short En Prompt | Long En Prompt |
 |-----------|-------------------|------------------|-------------------|------------------|
 | mT5-Small | 20.5              | 20.7             | **31.9**              | 17.9             |
 | mT5-Base  | *to be added* | *to be added* | *to be added* | *to be added* |
@@ -62,3 +71,5 @@ How did it go?  + Interpret results.
 [^7]: https://github.com/Shivanandroy/simpleT5
 
 [^8]: Prachya Boonkwan et al., "The Annotation Guideline of LST20 Corpus," (2020), https://doi.org/10.48550/arXiv.2008.05055.
+
+[^9]: https://huggingface.co/docs/transformers/model_doc/mt5
