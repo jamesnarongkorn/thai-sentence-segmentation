@@ -19,11 +19,21 @@
 - We provide the training set and the evaluation set to simpleT5⚡️ with a pandas dataframe with 2 columns labeled 'source_text' for the input and 'target_text' for the output. The input is sequences of text prefixed by a prompt and the output is sequences of text marked with vertical bars (|) as sentence delimiters.
 
 ## Dataset
-- The models are trained on the LST20 Corpus, which offers 74,180 Thai sentences annotated with a boundary marker[^8]. This large-scale NECTEC-developed dataset also comes with four other layers of linguistic annotation: word segmentation, POS tagging, named entities, and clause boundaries. It spans over 3,000,000 words from 3,745 documents in 15 news domain.
+- We utilize the data from the LST20 Corpus, which offers 74,180 Thai sentences annotated with a boundary marker[^8]. This large-scale NECTEC-developed dataset also comes with four other layers of linguistic annotation: word segmentation, POS tagging, named entities, and clause boundaries. It spans over 3,000,000 words from 3,745 documents in 15 news domain.
+- We also include our annotated 205 sentences from news sites, Facebook posts, and Tweets. The annotation guideline is in accordance with that of LST20 Corpus with some modification:
+    - Topic shift: A sentence starts after a cohesive marker (e.g. อย่างไรก็ตาม, นากจากนี้, โดย, โดยที่).
+    - Subject shift: If the subject in two adjacent sentences change, the sentences are considered as two separate sentences.
+    - Direct speech: The clauses inside and outside a quote are considered as one sentence.
+    - Indirect speech: Sentences are marked when there is a shift in topic or subject.
+    - List: If items inside a list marker (e.g. เช่น, อาทิ, ได้แก่) are nouns, they are included in the sentence. However, if the items are clauses or sentences, they will be delimetered.
+    - Particle: Final particles in Thai can indicate the end of a sentence (e.g. ครับ, ค่ะ, นะ)
+- Our models are then trained on both dataset.
 
 |           | train  | eval  | test  | all    |
 |-----------|--------|-------|-------|--------|
-| sentences | 63,310 | 5,620 | 5,250 | 74,180 |
+| LST20 | 63,310 | 5,620 | 5,250 | 74,180 |
+| Our data | 180 | 13 | 12 | 205 |
+| Total | 63,490 | 5,633 | 5,262 | 74,385 |
 
 ## Experiment setup
 - To reiterate, training texts from the LST20 Corpus is feed to the mT5 model. Task prefix is included at the beginning of each row of data with 4 variations to test whether differences in prompt length and language affect model performance. The propmts are listed below:
