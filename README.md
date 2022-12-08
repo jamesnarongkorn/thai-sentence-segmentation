@@ -20,13 +20,13 @@
 
 ## Dataset
 - We utilize the data from the LST20 Corpus, which offers 74,180 Thai sentences annotated with a boundary marker[^8]. This large-scale NECTEC-developed dataset also comes with four other layers of linguistic annotation: word segmentation, POS tagging, named entities, and clause boundaries. It spans over 3,000,000 words from 3,745 documents in 15 news domain.
-- We also include our annotated 205 sentences from news sites, Facebook posts, and Tweets. The annotation guideline is in accordance with that of LST20 Corpus with some modification:
-    - Topic shift: A sentence starts after a cohesive marker (e.g. อย่างไรก็ตาม, นากจากนี้, โดย, โดยที่).
-    - Subject shift: If the subject in two adjacent sentences change, the sentences are considered as two separate sentences.
-    - Direct speech: The clauses inside and outside a quote are considered as one sentence.
-    - Indirect speech: Sentences are marked when there is a shift in topic or subject.
-    - List: If items inside a list marker (e.g. เช่น, อาทิ, ได้แก่) are nouns, they are included in the sentence. However, if the items are clauses or sentences, they will be delimetered.
-    - Particle: Final particles in Thai can indicate the end of a sentence (e.g. ครับ, ค่ะ, นะ)
+- We also include our annotated 205 sentences from news sites, Facebook posts, and Tweets. The annotation guideline is in accordance with that of LST20 Corpus, but with some slight modification:
+    - **Topic shift:** A sentence starts after a cohesive marker (e.g. อย่างไรก็ตาม, นากจากนี้, โดย, โดยที่).
+    - **Subject shift:** If the subject in two adjacent sentences change, the sentences are considered as two separate sentences.
+    - **Direct speech:** The clauses inside and outside a quote are considered as one sentence.
+    - **Indirect speech:** Sentences are marked when there is a shift in topic or subject.
+    - **List:** If items inside a list marker (e.g. เช่น, อาทิ, ได้แก่) are nouns, they are included in the sentence. However, if the items are clauses or sentences, they will be segmented.
+    - **Particle:** Final particles in Thai can indicate the end of a sentence (e.g. ครับ, ค่ะ, นะ)
 - Our models are then trained on both dataset.
 
 |           | train  | eval  | test  | all    |
